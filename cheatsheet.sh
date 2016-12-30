@@ -10,6 +10,24 @@ N2=5
 
 ## DECLARE FUNCTIONS
 
+
+function fun_git() {
+'
+git init
+git config --global user.email mail@gmail.com"
+git add <file>
+git commit -m "first commit"
+git remote add origin https://github.com/<user>/<repo>.git
+git push -u origin master
+
+** IF YOUR REMOTE ADD ORIGIN SITE IS WRONG, OVERWRITE USING THIS: **
+git remote set-url origin https://github.com/bgomes06/cs.git
+
+** TO CHANGE SOMETHING BEFOR PUSH **
+git commit --amend
+
+'
+
 function fun_ifelse() {
 	if [ $N1 -gt $N2 ]; then
 		echo 'N1 is greater than N2.'
@@ -33,16 +51,6 @@ function fun_for() {
 		echo $i
 	done
 }
-
-function fun_git() {
-'
-git init
-git config --global user.email mail@gmail.com"
-git add <file>
-git commit -m "first commit"
-git remote add origin https://github.com/<user>/<repo>.git
-git push -u origin master
-'
 
 
 echo 'Choose one option:'
