@@ -27,6 +27,7 @@ git remote set-url origin https://github.com/bgomes06/cs.git
 git commit --amend
 
 '
+}
 
 function fun_ifelse() {
 	if [ $N1 -gt $N2 ]; then
