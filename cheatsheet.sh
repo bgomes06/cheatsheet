@@ -53,6 +53,11 @@ function fun_for() {
 	done
 }
 
+function fun_docker() {
+        ## Simple docker container creation
+        docker run -dit --name teste1 --hostname teste -v /teste:/container ubuntu:latest /bin/bash
+
+}
 
 echo 'Choose one option:'
 echo '1) IF/ELSE'
