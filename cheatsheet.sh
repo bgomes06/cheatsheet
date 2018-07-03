@@ -68,5 +68,3 @@ case $opt in
 	4) fun_regex ;;
 	*) echo 'Wrong option. Aborting...'
 esac
-
-
