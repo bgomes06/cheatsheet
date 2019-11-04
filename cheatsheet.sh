@@ -10,6 +10,15 @@ N2=5
 
 ## DECLARE FUNCTIONS
 
+function new_git_repo() {
+	read -r "Github username: " github_username
+	test -z $github_username && echo "Github username required." 1>&2 && exit 1
+
+	read -r "Repo name: " repo_name
+	test -z $repo_name && echo "Repo name required." 1>&2 && exit 1
+
+curl -u 'github_username' https://api.github.com/user/repos -d "{\"name\":\"$repo_name\"}"
+}
 
 function fun_git() {
 '
@@ -64,6 +73,7 @@ echo '1) IF/ELSE'
 echo '2) WHILE'
 echo '3) FOR'
 echo '4) REGEX'
+echo '5) GITHUB REPO CREATE'
 read -p 'Your option: ' opt
 
 case $opt in
@@ -71,5 +81,6 @@ case $opt in
 	2) fun_while ;;
 	3) fun_for ;;
 	4) fun_regex ;;
+	5) new_git_repo ;;
 	*) echo 'Wrong option. Aborting...'
 esac
