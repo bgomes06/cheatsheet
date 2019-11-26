@@ -11,10 +11,10 @@ N2=5
 ## DECLARE FUNCTIONS
 
 function new_git_repo() {
-	read -r "Github username: " github_username
+	read -p "Github username:" github_username
 	test -z $github_username && echo "Github username required." 1>&2 && exit 1
 
-	read -r "Repo name: " repo_name
+	read -p "Repo name:" repo_name
 	test -z $repo_name && echo "Repo name required." 1>&2 && exit 1
 
 curl -u 'github_username' https://api.github.com/user/repos -d "{\"name\":\"$repo_name\"}"
